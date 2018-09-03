@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mystudy/mystudy",
+    "pages/personcenter/personcenter"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "云书",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "list": [
+        {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"/images/tab/ciwei.png",
+        "selectedIconPath":"/images/tab/ciwei_hl.png"
+        },
+        {
+        "pagePath": "pages/mystudy/mystudy",
+        "text": "我的学习",
+        "iconPath":"/images/tab/ciwei.png",
+        "selectedIconPath":"/images/tab/ciwei_hl.png"
+        },
+        {
+        "pagePath": "pages/personcenter/personcenter",
+        "text": "个人中心",
+        "iconPath":"/images/tab/ciwei.png",
+        "selectedIconPath":"/images/tab/ciwei_hl.png"
+        }
+      ]
+    }
+  }
+

@@ -1,0 +1,9 @@
+.container {
+  /* display: block; */
+  width: 710rpx;
+  height:500rpx;
+  margin:10rpx 20rpx;
+}
+swiper-item image{
+  width:100%;
+}
