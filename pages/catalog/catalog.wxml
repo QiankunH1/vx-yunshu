@@ -1,0 +1,8 @@
+<!--pages/catalog/catalog.wxml-->
+<view class='book-list'>
+<navigator wx:for="{{bookList}}" wx:key="{{index}}" url='/pages/book/book?id={{item._id}}&bookId={{item.data.id}}'>
+<view class="text-warper">
+<text>{{item.title}}</text>
+</view>
+</navigator>
+</view>

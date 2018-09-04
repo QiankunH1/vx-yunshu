@@ -1,0 +1,8 @@
+<!--引入towxml模版入口文件，并使用模版-->
+<import src="/towxml/entry.wxml"/>
+
+<view class='book'>
+    <view>
+        <template is="entry" data="{{...article}}"/>
+    </view>
+</view>

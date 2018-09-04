@@ -1,0 +1,15 @@
+/* pages/book/book.wxss */
+.book-list{
+  padding: 4%;
+
+}
+.text-warper{
+  padding-bottom: 3rpx;
+ 
+  border-bottom: 2rpx solid #333;
+}
+.text-warper text{
+  line-height: 2.0;
+  font-size: 30rpx;
+  color: #666;
+}

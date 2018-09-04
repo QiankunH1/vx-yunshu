@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/mystudy/mystudy",
-    "pages/personcenter/personcenter"
+    "pages/personcenter/personcenter",
+    "pages/details/details",
+    "pages/catalog/catalog",
+    "pages/book/book"
   ],
   "window":{
     "backgroundTextStyle":"light",

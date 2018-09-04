@@ -1,12 +1,43 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container index">
 <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicindicatorActiveColor}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" >
-  <block wx:for="{{imgUrls}}" wx:key="{{index}}"> 
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
-    </swiper-item>
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" >
+  <block wx:for="{{swiperDate}}" wx:key="{{index}}"  > 
+    <swiper-item bindtap="jumpBook" data-id="{{item.book._id}}">
+      <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>  
   </block>
 </swiper>
+
+
+<view class="main-content">
+    <view class="content-item"  wx:for="{{mainContent}}"  wx:key="{{index}}">
+        <view class="title">
+            {{item.title}}
+        </view>
+        <view class="content" wx:for="{{item.books}}"  wx:key="{{index}}">
+              <view class="box-l">
+                  <image src="{{item.img}}" class="img"></image>
+              </view>
+              <view class="box-r">
+                  <view class="book-title">{{item.title}}</view>
+                  <view class="book-desc">{{item.desc}}</view>
+                  <view>
+                      <view class="book-author">
+                          <text class="author-l">{{item.author}}</text>
+                          <view class="author-r">
+                              <text class="update-time">两天前</text>
+                              <text class="categorp">分类</text>
+                              <text class="many">{{item.looknums}}</text>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+        </view>
+    </view>
+</view>
+
+
+
 
 </view>

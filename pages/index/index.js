@@ -5,14 +5,7 @@ const app = getApp()
 
 Page({
   data: {
-    imgUrls: [
-      // 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      // 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-      "../../images/swiper/01.jpg",
-      "../../images/swiper/02.jpg",
-      "../../images/swiper/03.jpg",
-    ], 
+    swiperData: [], 
     indicatorDots:true,
     autoplay: false,
     interval: 1000,
@@ -25,15 +18,30 @@ Page({
 
   onLoad: function () {
     this.getData();
+    this.getContent();
     } ,
     
   getData(){
    fetch.get('/swiper').then(res=>{
-     console.log(res);
-     
-
+     this.setData({
+       swiperDate:res.data
+     })  
    })
-  
+  },
+  getContent(){
+    fetch.get('/category/books').then(res=>{
+      // console.log(res)
+      this.setData({
+        mainContent:res.data
+      })
+    })
+  },
+  jumpBook(event){
+    // console.log(event)
+    const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/details/details?id=${id}`
+    })
   }
  
 })
