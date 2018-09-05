@@ -1,6 +1,7 @@
 <!--pages/catalog/catalog.wxml-->
-<view class='book-list'>
-<navigator wx:for="{{bookList}}" wx:key="{{index}}" url='/pages/book/book?id={{item._id}}&bookId={{item.data.id}}'>
+ <image src='/static/img/loading.svg' class="loading" wx:if="{{isLoading}}"></image>
+<view class='book-list' wx:else>
+<navigator wx:for="{{bookList}}" wx:key="{{index}}" url='/pages/book/book?id={{item._id}}&bookId={{item.bookId}}'>
 <view class="text-warper">
 <text>{{item.title}}</text>
 </view>

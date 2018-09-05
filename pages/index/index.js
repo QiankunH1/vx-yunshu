@@ -13,6 +13,7 @@ Page({
     indicindicatorActiveColor:"green",
     circular:true,
     indicatorColor: "blue",
+    isLoading:false
   },
   //事件处理函数
 
@@ -22,9 +23,13 @@ Page({
     } ,
     
   getData(){
+    this.setData({
+      isLoading:true
+    })
    fetch.get('/swiper').then(res=>{
      this.setData({
-       swiperDate:res.data
+       swiperDate:res.data,
+       isLoading: false
      })  
    })
   },

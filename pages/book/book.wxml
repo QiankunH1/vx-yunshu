@@ -1,8 +1,36 @@
-<!--引入towxml模版入口文件，并使用模版-->
-<import src="/towxml/entry.wxml"/>
+
 
 <view class='book'>
-    <view>
-        <template is="entry" data="{{...article}}"/>
+ <image src='/static/img/loading.svg' class="loading" wx:if="{{isLoading}}"></image>
+    <view class='wemark-wrap' style="{{'font-size:'+font+'rpx'}}" wx:else>
+        <wemark md="{{article}}"  highlight type="rich-text"></wemark>
+    </view>
+
+
+    <!-- 目录 -->
+
+<scroll-view scroll-y class="catalog-menu {{isShow ? 'active': ''}}">
+    
+   
+        <view class="catalog-item" wx:for="{{catalog}}" wx:key="{{index}}" bindtap='abc' id="{{item._id}}">
+        {{item.title}}
+        </view> 
+         </scroll-view>
+
+    <view class="mask" wx:if="{{isShow}}" bindtap='toggleCatalog'>
+    
+    </view>
+
+
+
+
+
+    <!-- 菜单 -->
+    <view class="menu">
+        <view class="iconfont icon-zuoyoujiantou1" bindtap="handlePrev"></view>
+        <view class="iconfont icon-liebiao" bindtap="toggleCatalog" ></view>
+        <view class="iconfont icon-yueduye_zitizengda" bindtap="handleAdd"></view>
+        <view class="iconfont icon-yueduye_zitijianxiao" bindtap="handleRuduce"></view>
+        <view class="iconfont icon-zuoyoujiantou" bindtap="handleNext"></view>
     </view>
 </view>

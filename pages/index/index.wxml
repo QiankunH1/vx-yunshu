@@ -1,5 +1,7 @@
 <!--index.wxml-->
 <view class="container index">
+ <image src='/static/img/loading.svg' class="loading" wx:if="{{isLoading}}"></image>
+ <view wx:else>
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" >
   <block wx:for="{{swiperDate}}" wx:key="{{index}}"  > 
@@ -38,6 +40,6 @@
 </view>
 
 
-
+</view>
 
 </view>

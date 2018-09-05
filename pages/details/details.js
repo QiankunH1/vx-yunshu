@@ -4,7 +4,8 @@ import { fetch } from '../../utils/util.js'
 Page({
  data: {
     bookId:"",
-    bookData:{}
+    bookData:{},
+    isLoading:false
   },
   onLoad: function (options) {
     // console.log(options)
@@ -14,10 +15,14 @@ Page({
     this.getData()
   },
   getData(){
+    this.setData({
+      isLoading:true
+    })
     fetch.get(`/book/${this.data.bookId}`).then(res=>{
       //  console.log(res)
       this.setData({
-          bookData:res
+          bookData:res,
+          isLoading:false
       })
     })
   },

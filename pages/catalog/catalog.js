@@ -21,10 +21,14 @@ Page({
     this.getData()
   },
   getData() {
+    this.setData({
+      isLoading:true
+    })
     fetch.get(`/titles/${this.data.bookId}`).then(res => {
       // console.log(res)
       this.setData({
-        bookList: res.data
+        bookList: res.data,
+        isLoading:false
       })
     })
   },
