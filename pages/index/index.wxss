@@ -51,3 +51,20 @@
   justify-content: space-between;
   font-size: 12px;
 }
+
+
+.loading-more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160rpx;
+}
+
+.loading-more .loadmore-img{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.loading-more text{
+  margin-left: 20rpx;
+}
