@@ -1,2 +1,28 @@
 <!--pages/mystudy/mystudy.wxml-->
-<text>pages/mystudy/mystudy.wxml</text>
+<view class='all'>
+   <view >
+        <text>我的学习</text>
+    </view>
+  <view class='main' wx:for="{{studyData}}" wx:key="{{index}}">
+    <view>   
+        <image src="{{item.book.img}}" class='img'></image>
+    </view>
+    <view>
+        <view class='title'>{{item.book.title}}</view>
+        <view class='section'>书籍{{item.title.index+1}}/{{item.title.total}}章节</view>
+        <view class='process'>
+            <text>进度条</text>
+            <text>已看2%</text>
+        </view>
+        <view class='last-look'>
+            <view class='last-look-content'>上次查看：{{item.title.title}}</view>
+        </view>
+        <view class='continue'>
+            <button bindtap='toggleCatalog' data-id="{{item.title._id}}" data-bookid="{{item.title.bookId}}">继续阅读</button>
+            <button bindtap="jumpBook" data-id="{{item.book._id}}">查看文档</button>
+        </view> 
+      </view>
+  </view>
+  
+
+</view>

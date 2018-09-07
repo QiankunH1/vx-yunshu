@@ -1,2 +1,35 @@
 <!--pages/personcenter/personcenter.wxml-->
-<text>pages/personcenter/personcenter.wxml</text>
+<view class='all'>
+<view >
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+  
+  <view class='login-info'>
+
+    <view class='name-pic'>
+         <view class='login-img'>
+              <image src='{{urls}}'></image>
+        </view>
+        <view class='login-name'>
+            <view>{{name}}</view>
+            <view class='login-decs'>这家伙真懒，什么都没有留下</view>
+        </view> 
+    </view>
+    <view class='collection-focus'>
+        <view>
+            <view>0</view>
+            <view>收藏</view>
+        </view>
+        <view>
+            <view>4</view>
+            <view>关注</view>
+        </view>
+    </view>
+
+  </view>
+
+  <view  class='book-img'>
+      <image src="/static/img/yunshu.jpg"></image>
+  </view>  
+
+</view>

@@ -1,66 +1,51 @@
 // pages/mystudy/mystudy.js
+import { fetch, login } from '../../utils/util.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    // studyData:[],
+    title:"",
+    // id:"",
+    // bookId:"",
+    titleId:""
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(){
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onShow(){
+    this.getDate()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+    getDate(){
+      fetch.get('/readList').then(res => {
+          // console.log(res)
+          this.setData({
+           studyData: res.data,
+          })
+        })
+     
+    },
+  jumpBook(event) {
+    const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/details/details?id=${id}`
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  toggleCatalog(event){
+    // console.log(event)
+    const id = event.currentTarget.dataset.id
+    const bookId = event.currentTarget.dataset.bookid
+    wx.navigateTo({
+      url: `/pages/book/book?id=${id}&bookId=${bookId}`
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
-  }
+  },
 })

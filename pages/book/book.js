@@ -39,7 +39,7 @@ Page({
     })
     fetch.get(`/article/${this.data.titleId}`)
       .then(res => {
-        //  console.log(res)
+         console.log(res)
         this.setData({
           article: res.data.article.content,
           // article: res.data.article,

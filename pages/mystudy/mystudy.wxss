@@ -1,1 +1,58 @@
 /* pages/mystudy/mystudy.wxss */
+.all{
+margin: 0rpx 20rpx;
+}
+.main{
+  margin: 20rpx 0rpx;
+  width: 710rpx;
+  height: 300rpx;
+  display: flex; 
+}
+.main .img{
+  margin-right: 20rpx;
+  height: 300rpx;
+  width: 200rpx;
+}
+.main .title{
+  margin: 5px 0px;
+  font-size: 12px;
+}
+.main .section{
+  margin:5px 0px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+.main .process{
+  margin: 5px 0px;
+  font-size: 10px;
+  font-weight: lighter;
+}
+.main .last-look{
+
+   font-size: 10px;
+   margin:10px 0px;
+   font-weight: lighter;
+
+}
+.main .last-look .last-look-content{
+  display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2; 
+
+}
+.main .continue{
+ 
+  display: flex;
+  width: 400rpx;
+  height: 80rpx;
+ 
+}
+.main .continue button{
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 10px;
+}
+

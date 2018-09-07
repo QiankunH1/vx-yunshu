@@ -3,6 +3,7 @@
 <view class='book'>
  <image src='/static/img/loading.svg' class="loading" wx:if="{{isLoading}}"></image>
     <view class='wemark-wrap' style="{{'font-size:'+font+'rpx'}}" wx:else>
+       <!-- <view>"{{title}}"</view> -->
         <wemark md="{{article}}"  highlight type="rich-text"></wemark>
     </view>
 

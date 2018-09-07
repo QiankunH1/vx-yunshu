@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-import {fetch}from '../../utils/util.js'
+import {fetch,login}from '../../utils/util.js'
 const app = getApp()
 
 Page({
@@ -24,7 +24,7 @@ Page({
   onLoad: function () {
     this.getData();
     this.getContent();
-  
+    login();
     } ,
     
   getData(){
@@ -54,6 +54,7 @@ Page({
       })
       fetch.get('/category/books').then(res => {
         resolve()
+        // console.log(res)
         this.setData({
           mainContent: res.data,
           isLoading: false
@@ -62,6 +63,7 @@ Page({
     })
   },
   getAllData(){
+    // login()
     return new Promise((resolve,reject)=>{
       Promise.all([this.getData(), this.getContent()]).then(res=>{
         resolve() 
@@ -81,7 +83,7 @@ Page({
   getMoreContent(){
     return new Promise(resolve=>{
       fetch.get('/category/books', { pn: this.data.pn }).then(res => {
-        console.log(res)
+        // console.log(res)
         let newArr=[...this.data.mainContent,...res.data]
         this.setData({
           mainContent:newArr,
@@ -93,7 +95,7 @@ Page({
     
   },
   onPullDownRefresh: function () {
-    console.log("下拉执行了")
+    // console.log("下拉执行了")
       this.getAllData().then(()=>{
         this.setData({
           pn: 1,
@@ -103,7 +105,7 @@ Page({
       })
   },
  onReachBottom(){
-   console.log("上拉执行了")
+  //  console.log("上拉执行了")
    if(this.data.hasMore){
      this.setData({
        pn:this.data.pn+1,

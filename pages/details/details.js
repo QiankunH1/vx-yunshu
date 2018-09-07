@@ -34,6 +34,10 @@ Page({
     })
   },
   onShareAppMessage: function () {
-
+      return{
+        title:this.data.bookData.data.title,
+        path:`pages/details/details?id=${this.data.bookId}`,
+        imageUrl:this.data.bookData.data.img
+      }
   },
 })
