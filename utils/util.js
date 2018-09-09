@@ -17,6 +17,7 @@ const fetch ={
         header,
         success(res) {
           if (res.header.Token || res.header.token){
+            res.header.Token=(res.header.Token || res.header.token)
             wx.setStorageSync('token', res.header.Token)
           }
           resolve(res.data)
@@ -33,7 +34,10 @@ const fetch ={
       },
       post(url, data) {
         return this.http(url, "POST", data)
-      }  
+      },  
+      delete(url,data){
+        return this.http(url,"DELETE",data)
+      }
     
 }
 

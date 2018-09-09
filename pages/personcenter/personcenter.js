@@ -1,4 +1,5 @@
 // pages/personcenter/personcenter.js
+import { fetch, login } from '../../utils/util.js'
 Page({
 
   /**
@@ -8,6 +9,7 @@ Page({
     canIUse: true,
     name:"",
     urls:"",
+    num:0
     
   },
 
@@ -16,9 +18,13 @@ Page({
    */
   onLoad: function () {
     // 查看是否授权
+  this.getInfo()
+   
+  },
+  getInfo(){
     let _this = this
     wx.getSetting({
-      
+
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
@@ -27,10 +33,10 @@ Page({
               _this.setData({
                 name: res.userInfo.nickName,
                 urls: res.userInfo.avatarUrl,
-                canIUse:false
+                canIUse: false
               })
               console.log(res.userInfo)
-              
+
             }
           })
         }
@@ -39,8 +45,28 @@ Page({
   },
   bindGetUserInfo: function (e) {
     console.log(e.detail.userInfo)
-  }, 
+    this.setData({
+      name: e.detail.userInfo.nickName,
+      urls: e.detail.userInfo.avatarUrl,
+      canIUse: false
 
+    })
+    this.getCollectNum()
+    
+  }, 
+  toCollect(){
+    wx.navigateTo({
+      url: '/pages/collect/collect',
+    })
+  },
+  getCollectNum(){
+    fetch.get('/collection/total').then(res=>{
+      console.log(res)
+      this.setData({
+        num:res.data,
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -52,7 +78,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+ let  _this=this
+    wx.getSetting({
 
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          _this.getCollectNum()
+        }
+      }
+    })
+
+
+
+     
+    
   },
 
   /**

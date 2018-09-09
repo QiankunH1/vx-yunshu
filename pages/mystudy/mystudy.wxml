@@ -11,8 +11,9 @@
         <view class='title'>{{item.book.title}}</view>
         <view class='section'>书籍{{item.title.index+1}}/{{item.title.total}}章节</view>
         <view class='process'>
-            <text>进度条</text>
-            <text>已看2%</text>
+      
+            <progress percent="60" color="pink" />
+            <text>已看 </text>
         </view>
         <view class='last-look'>
             <view class='last-look-content'>上次查看：{{item.title.title}}</view>

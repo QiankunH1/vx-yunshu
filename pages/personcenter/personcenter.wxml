@@ -7,29 +7,30 @@
   <view class='login-info'>
 
     <view class='name-pic'>
-         <view class='login-img'>
+         <view class='login-l'>
               <image src='{{urls}}'></image>
         </view>
-        <view class='login-name'>
-            <view>{{name}}</view>
+        <view class='login-r'>
+            <view class='login-name'>{{name}}</view>
             <view class='login-decs'>这家伙真懒，什么都没有留下</view>
         </view> 
     </view>
+
     <view class='collection-focus'>
         <view>
-            <view>0</view>
-            <view>收藏</view>
+            <view class='num'>{{num}}</view>
+            <view class='text' bindtap='toCollect'> 收藏</view>
         </view>
         <view>
-            <view>4</view>
-            <view>关注</view>
+            <view class='num'>4</view>
+            <view class='text'>关注</view>
         </view>
     </view>
 
   </view>
 
-  <view  class='book-img'>
-      <image src="/static/img/yunshu.jpg"></image>
+  <view  class='login-footer'>
+        <view class='book-img'></view>
   </view>  
 
 </view>

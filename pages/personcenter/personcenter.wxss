@@ -1,2 +1,71 @@
 /* pages/personcenter/personcenter.wxss */
+.all{
+  width: 100%;
+  height: 100%;
+}
+.login-info{
+  margin: 0;
+  padding: 0;
+  background: blue;
+}
+.login-info{
+  color: #fff;
+  height: 30%;
+}
+.name-pic{
+  display: flex;
+  
+}
+.name-pic .login-l{
+  /* display: inline-block; */
+  width: 150rpx;
+  height: 150rpx;
+  margin: 40rpx 40rpx;
+}
+.name-pic .login-l image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%
+}
+
+.name-pic .login-r{
+  /* display: inline-block; */
+  margin-top: 40rpx;
+ 
+}
+.name-pic .login-r .login-name{
+  font-size: 14px;
+  font-weight: 700;
+  height: 28px;
+  line-height: 28px;
+}
+.name-pic .login-r .login-decs {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+}
+
+
+.collection-focus{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 90px 10px 90px;
+}
+.collection-focus .num{
+  padding-left:10px;
+  font-size: 12px;
+}
+.collection-focus .text{
+  font-size: 13px;
+}
+.login-footer{
+  height: 600rpx;
+  width: 100%
+}
+.login-footer .book-img{
+  width: 100%;
+  height: 100%;
+  background-image: url('http://www.ctsbw.com/uploadfile/2016/0607/20160607095445806.png')
+}
+
 

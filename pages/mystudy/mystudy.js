@@ -10,7 +10,8 @@ Page({
     title:"",
     // id:"",
     // bookId:"",
-    titleId:""
+    titleId:"",
+    
   
   },
 
@@ -21,10 +22,11 @@ Page({
   },
   onShow(){
     this.getDate()
+   
   },
     getDate(){
       fetch.get('/readList').then(res => {
-          // console.log(res)
+          console.log(res)
           this.setData({
            studyData: res.data,
           })
@@ -45,6 +47,7 @@ Page({
       url: `/pages/book/book?id=${id}&bookId=${bookId}`
     })
   },
+  
   onShareAppMessage: function () {
 
   },

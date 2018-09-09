@@ -5,7 +5,8 @@
     "pages/personcenter/personcenter",
     "pages/details/details",
     "pages/catalog/catalog",
-    "pages/book/book"
+    "pages/book/book",
+    "pages/collect/collect"
   ],
   "window":{
     "backgroundTextStyle":"light",

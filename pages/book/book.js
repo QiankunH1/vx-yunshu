@@ -1,4 +1,4 @@
-import { fetch } from '../../utils/util.js'
+import { fetch, login } from '../../utils/util.js'
 
 
 Page({

@@ -1,36 +1,55 @@
-// pages/catalog/catalog.js
-import { fetch, login } from '../../utils/util.js'
+// pages/collect/collect.js
+import { fetch,login } from '../../utils/util.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     bookId:"",
-     bookList:[]
+   datas:[],
+   url:"",
+   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options)
-    this.setData({
-      bookId: options.id
-    })
-    this.getData()
+  this.getDate()
   },
-  getData() {
-    this.setData({
-      isLoading:true
+ getDate(){
+   fetch.get("/collection",{pn:1,size:999}).then(res=>{
+     console.log(res)
+     this.setData({
+     datas:res.data,
+     })
+   })
+ },
+  jumpBook(event) {
+   console.log(event)
+    const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/details/details?id=${id}`
     })
-    fetch.get(`/titles/${this.data.bookId}`).then(res => {
-      // console.log(res)
-      this.setData({
-        bookList: res.data,
-        isLoading:false
-      })
+  },
+  delete(event){
+    console.log(event)
+    let id =event.currentTarget.id
+    let _this=this
+    wx.showModal({
+      title: '提示',
+      content: '是否取消收藏',
+      success: function (res) {
+        if (res.confirm) {
+          fetch.delete(`/collection/${id}`)
+          _this.getDate()
+        } else if (res.cancel) {
+          
+        }
+      }
     })
+    
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -43,7 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

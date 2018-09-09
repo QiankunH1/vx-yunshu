@@ -1,0 +1,51 @@
+
+.all{
+  margin: 10px 10px;
+}
+.tishi{
+  font-size: 12px;
+  color: #555;
+  border: 2px solid #555;
+  width: 200rpx;
+  background: yellowgreen;
+  border-radius: 20%;
+  margin-top: 20px;
+}
+
+.content-item{
+  margin-top:40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.content-item .box-l .img{
+  width: 250rpx;
+  height:300rpx;
+}
+
+.box-r .book-title{
+  font-size: 16px;
+  color: #333;
+}
+.box-r{
+  margin-left: 30rpx; 
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.box-r .book-desc{
+  color:#444;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  line-height:1.5;
+}
+
+.box-r .book-author{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}

@@ -10,7 +10,7 @@ margin: 0rpx 20rpx;
 }
 .main .img{
   margin-right: 20rpx;
-  height: 300rpx;
+  height: 260rpx;
   width: 200rpx;
 }
 .main .title{
